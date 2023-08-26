@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keyword Text Copier</title>
+    <style>
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .keyword-button {
+            flex: 1 1 calc(25% - 10px);
+            padding: 10px;
+            text-align: center;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Keyword Text Copier</h1>
+    <div class="button-container">
+        <button class="keyword-button" onclick="copyText('nume')">nume</button>
+        <button class="keyword-button" onclick="copyText('judet')">judet</button>
+        <button class="keyword-button" onclick="copyText('web')">web</button>
+        <button class="keyword-button" onclick="copyText('pagina')">pagina</button>
+        <button class="keyword-button" onclick="copyText('email')">email</button>
+        <button class="keyword-button" onclick="copyText('denumire')">denumire</button>
+        <button class="keyword-button" onclick="copyText('telefon')">telefon</button>
+        <button class="keyword-button" onclick="copyText('tip')">tip</button>
+        <button class="keyword-button" onclick="copyText('domeniu')">domeniu</button>
+        <button class="keyword-button" onclick="copyText('subdomeniu')">subdomeniu</button>
+        <button class="keyword-button" onclick="copyText('valoare')">valoare</button>
+        <button class="keyword-button" onclick="copyText('cnp')">cnp</button>
+        <button class="keyword-button" onclick="copyText('reprezentant')">reprezentant</button>
+        <button class="keyword-button" onclick="copyText('proiect')">proiect</button>
+        <button class="keyword-button" onclick="copyText('nevoie')">nevoie</button>
+        <button class="keyword-button" onclick="copyText('scop')">scop</button>
+        <button class="keyword-button" onclick="copyText('grup')">grup</button>
+        <button class="keyword-button" onclick="copyText('provenienta')">provenienta</button>
+        <button class="keyword-button" onclick="copyText('categorie')">categorie</button>
+        <button class="keyword-button" onclick="copyText('activitati')">activitati</button>
+        <button class="keyword-button" onclick="copyText('comunitati')">comunitati</button>
+        <button class="keyword-button" onclick="copyText('impact')">impact</button>
+        <button class="keyword-button" onclick="copyText('echipa')">echipa</button>
+        <button class="keyword-button" onclick="copyText('partneri')">partneri</button>
+        <!-- ... Add more buttons for each keyword here -->
+    </div>
+
+    <script>
+        const keywords = {
+            "nume": "Fundatia Judeteana pentru Tineret Prahova",
+            "judet": "Prahova",
+            "web": "daca e cazul;",
+            "pagina": "https://www.facebook.com/tineretprahova",
+            "email": "tineret.prahova@gmail.com",
+            "denumire": "EcoTex Reload",
+            "telefon": "0724288155",
+            "tip": "5.000-10.000",
+            "domeniu": "mediu",
+            "subdomeniu": "10. Alte tipuri de proiecte ce apartin domeniului.",
+            "valoare": "48 000 lei",
+            "cnp": "CUI 38901064",
+            "reprezentant": "Mihaela Tataru",
+            "proiect": "Proiectul vizeaza colectarea hainelor in Ploiesti, pentru a ajuta persoanele nevoiase si pentru a\npromova o cultura a reciclarii si economisirii de resurse. Proiectul are in vedere persoanele\nvulnerabile. Acest proiect este important pentru promovarea unui stil de viata sustenabil si pentru\nimplicarea tinerilor in proiecte de voluntariat...",
+            "nevoie": "Nevoia care a impus dezvoltarea proiectului este de a educa comunitatea locala si in special tinerii\nasupra problemelor de mediu si de a oferi sprijin persoanelor nevoiase prin intermediul unui\nproiect de colectare a hainelor prin intermediul a 4 containere pentru inceput, amplasate in\naproximativ fiecare colt al orasului...",
+            "scop": "Obiectivul general al proiectului este sa se reduca cantitatea de deseuri textile prin reciclarea\nacestora, un lucru care astazi se realizeaza foarte putin nu doar in Ploiesti ci si in toata tara\nOb.1 Cresterea reciclarii materialelor textile cu 10 %, in Ploiesti, pe parcursul urmatoarelor 12 luni\nOb. 2 Informarea unui numar de minim 10000 de cetateni...",
+            "grup": "Grupul tinta al proiectului este reprezentat de persoanele din comunitatea locala care doresc sa\ndoneze haine, dar si de cei care au nevoie de haine, cum ar fi persoanele fara adapost, familiile cu\nvenituri reduse, comunitatile care au trecut printr-un dezastru natural (cutremur, razboi,samd)...",
+            "provenienta": "10 000 de cetateni ai municipiului Ploiesti, cu varsta cuprinsa intre 10 si 100 ani, care doresc sa\ndoneze haine; 500 de elevi din scolile ploiestene care vor participa la atelierele de informare; 100 de\nvoluntari implicati in tot procesul, 100 persoane care vor beneficia de produse...",
+            "categorie": "- toti cetatenii Ploiestiului care tranziteaza zonele\ntinerii si persoanele care urmaresc paginile FJT si a partenerilor si colaboratorilor acesteia. (FJT -\nFacebook:1,6k urmaritori, Instagram: 465 urmaritori; Ploiesti CTR2024 - Facebook:4 k\nurmaritori, Instagram:673 urmaritori)",
+            "activitati": "Proiectul are mai multe activitati planificate pentru a asigura succesul sau. Primul pas este\ndemararea procedurii achizitionarii containerelor cat si a masinii de spalat si a uscatorului in\nvederea igienizarii acestora...\ncomunitati Proiectul se va desfasura in municipiul Ploiesti, Romania, prin intermediul celor 4 containere\npentru textile, care vor fi amplasate in diverse zone ale orasului si vor fi destinate colectarii de\nhaine pentru persoanele nevoiase din comunitatea locala...",
+            "impact": "Rezultate asteptate:\nR1.un numar de minim 200 de tineri participanti la sesiunile de informare si prezentare a\nproiectului (liste de prezenta si fotografii);\nR2. Containere (4) de colectare textile, amplasate in puncte strategice ale orasului (existenta fizica a\ncontainerelor in zone cu vad - fotografii/video):",
+            "echipa": "Radu Simionescu - Coordonator de proiect - persoana responsabila de coordonarea generala a\nproiectului si de asigurarea ca proiectul se incadreaza in termenii stabiliti.\nMadalin Chivu - Responsabil de colectarea hainelor\nNicoleta Iliescu - Comunicare si social media\nHana Barkia -responsabil identificare cazuri sociale\n30 de Voluntari - care vor fi implicati in realizarea tuturor activitatilor...",
+            "partneri": "Consideram ca mall-urile pot fi un partener important si pot juca un rol special. Dorim ca cele 4\ncontainere sa le amplasam in incinta acestora, deoarece acest lucru ar face mai facil accesul\noamenilor cat si transportul textilelor. Un alt partener il reprezinta asociatiile civice...",
+            // ... Add more keywords and text here
+        };
+
+        function copyText(keyword) {
+            if (keywords[keyword]) {
+                const text = keywords[keyword];
+                navigator.clipboard.writeText(text);
+                console.log(`Text for '${keyword}' copied to clipboard: ${text}`);
+            } else {
+                console.log(`No text found for '${keyword}'.`);
+            }
+        }
+    </script>
+</body>
+</html>
